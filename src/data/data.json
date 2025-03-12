@@ -8,8 +8,7 @@
         {
           "title": "Login userName and password",
           "description": "You don't need the email here, just the userName and the password.",
-          "image": "assets/auth_page.png",
-          "link": "https://laundryservice1-3a280.web.app/auth"
+          "image": "assets/auth_page.png"
         },
         {
           "title": "Login with code",
