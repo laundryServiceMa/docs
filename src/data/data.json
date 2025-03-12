@@ -1,0 +1,22 @@
+{
+  "websiteLine": "https://laundryservice1-3a280.web.app",
+  "sections": [
+    {
+      "title": "Authentication",
+      "description": "To login, the user can use the following credentials: **userName** and **password**, or obtain the **code** from the **server** and then login. You can get the access code at: [Link](https://console.firebase.google.com/project/laundryservice1-3a280/database/laundryservice1-3a280-70fbd/data)",
+      "supSections": [
+        {
+          "title": "Login userName and password",
+          "description": "You don't need the email here, just the userName and the password.",
+          "image": "assets/auth_page.png",
+          "link": "https://laundryservice1-3a280.web.app/auth"
+        },
+        {
+          "title": "Login with code",
+          "description": "You need to get the code from the server, then you can login with the code. on [Link](https://console.firebase.google.com/project/laundryservice1-3a280/database/laundryservice1-3a280-70fbd/data)",
+          "image": "assets/admin_code.png"
+        }
+      ]
+    }
+  ]
+}
