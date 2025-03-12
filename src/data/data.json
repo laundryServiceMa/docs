@@ -22,6 +22,18 @@
       "title": "Orders",
       "description": "The orders are stored in the database, it has the needed informations for the orders and there status, and you can look for the orders by search **Order Number** , **Customer Name** or **Customer phoneNumber**.",
       "image": "assets/orders.png"
+    },
+    {
+      "title": "Prices",
+      "description": "Its the prices category, which means the price for each machine, for each price it has **Name**, **Price**",
+      "image": "assets/prices.png",
+      "subSections": [
+        {
+          "title": "Edit price",
+          "description": "You can edit the price by clicking on the price, and then you can edit the price and it will be auto saved.",
+          "image": "assets/price_single.png"
+        }
+      ]
     }
   ]
 }
