@@ -1,0 +1,35 @@
+---
+interface Props {
+  id: string;
+  title?: string; // Optional title
+  padding?: string; // Optional padding (e.g., "2rem", "1rem 2rem")
+  maxWidth?: string; // Optional max-width to prevent full-screen width
+}
+
+const { id, title, padding = "3rem", maxWidth = "800px" } = Astro.props;
+---
+
+<style>
+  .section {
+    padding: var(--section-padding);
+    max-width: var(--section-max-width);
+    margin: 0 auto; /* Centers the section horizontally */
+  }
+
+  .section-title {
+    text-align: start; /* Left-align (start-align) the title */
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  :root {
+    --section-padding: 3rem;
+    --section-max-width: 800px;
+  }
+</style>
+
+<section id={id} class="section">
+  {title && <h2 class="section-title">{title}</h2>}
+  <slot />
+</section>

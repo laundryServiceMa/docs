@@ -1,0 +1,72 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <style>
+      /* Global styles (optional, but good practice) */
+      :root {
+        --text-color: #333; /* Default text color */
+        --background-color: #f0f0f0; /* Default background color */
+        /* Add other global variables here */
+      }
+
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        color: var(--text-color);
+        background-color: var(--background-color); /* Fallback */
+        /* Mesh Gradient Background */
+        background-image: radial-gradient(
+            circle at top left,
+            rgba(45, 45, 45, 0.628),
+            transparent
+          ),
+          radial-gradient(
+            circle at bottom right,
+            rgba(38, 12, 105, 0.2),
+            transparent
+          ),
+          radial-gradient(
+            circle at top right,
+            rgba(45, 34, 71, 0.2),
+            transparent
+          ),
+          radial-gradient(
+            circle at bottom left,
+            rgba(117, 172, 227, 0.2),
+            transparent
+          );
+        background-blend-mode: overlay; /* Key to blending gradients */
+        min-height: 100vh; /* Ensure it covers the whole viewport */
+        display: flex;
+        flex-direction: column;
+      }
+      main {
+        flex: 1; /* Allow main content to grow and fill space */
+        padding: 20px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text-color: #eee;
+          --background-color: #121212;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

@@ -1,20 +1,45 @@
 ---
-import Card from "./components/card/index.astro";
+import data from "../data/data.json";
+import Layout from "./components/layout/index.astro";
+import NavigationMenu from "./components/menu/index.astro";
+import Section from "./components/section/index.astro";
+
+const menuItems = [
+  ...data.sections.map((section, index) => ({
+    title: section.title,
+    index: `${index + 1}`,
+    href: `#${section.title}`,
+  })),
+];
+
+const sectionsData = data.sections.map((section) => ({
+  title: section.title,
+  description: section.description,
+  image: section.image,
+  subSections: section.subSections,
+}));
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Card
-      title="Astro"
-      description="The all-in-one web framework."
-      image="/astro.svg"
-    />
-  </body>
-</html>
+<Layout title="My Awesome Page">
+  <NavigationMenu menuItems={menuItems} />
+
+  <Section id="home">
+    <h2>Home Section</h2>
+    <p>Content of the home section.</p>
+  </Section>
+
+  <Section id="about">
+    <h2>About Section</h2>
+    <p>Content of the about section.</p>
+  </Section>
+
+  <Section id="services">
+    <h2>Services Section</h2>
+    <p>Content of the services section.</p>
+  </Section>
+
+  <Section id="contact">
+    <h2>Contact Section</h2>
+    <p>Content of the contact section.</p>
+  </Section>
+</Layout>
