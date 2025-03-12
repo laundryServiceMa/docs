@@ -34,6 +34,30 @@
           "image": "assets/price_single.png"
         }
       ]
+    },
+    {
+      "title": "Stores",
+      "description": "Those are the stores (Locals) that has the tablets which runs the machiens, each one has a **Name**, **Current income**",
+      "image": "assets/stores.png",
+      "subSections": [
+        {
+          "title": "Edit store",
+          "description": "You can edit the store by clicking on the store, and then you can edit the store and it will be auto saved.",
+          "image": "assets/store_single.png"
+        }
+      ]
+    },
+    {
+      "title": "Machines",
+      "description": "Those are the machines that are in the stores, each one has a **Name**, **Status**, **Store**, **Price**, **active**, the status is the status of the machine if its running or not, the active is if the machine is active or not (showing it to the user), the price is the price of the machine, the store is the store that the machine is in.",
+      "image": "assets/machines.png",
+      "subSections": [
+        {
+          "title": "Edit machine",
+          "description": "You can edit the machine by clicking on the machine, and then you can edit the machine and it will be auto saved, and you change its price category from here",
+          "image": "assets/machine_single.png"
+        }
+      ]
     }
   ]
 }
