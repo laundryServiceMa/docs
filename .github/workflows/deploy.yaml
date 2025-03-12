@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Or use the version that your Astro project requires
+          node-version: '20'  # Or use the version that your Astro project requires
 
       # Install Yarn (if not already installed)
       - name: Install Yarn
