@@ -1,0 +1,79 @@
+{
+  "websiteLine": "https://laundryservice1-3a280.web.app",
+  "sections": [
+    {
+      "title": "Authentication",
+      "description": "To login, the user can use the following credentials: **userName** and **password**, or obtain the **code** from the **server** and then login. You can get the access code at: [Link](https://console.firebase.google.com/project/laundryservice1-3a280/database/laundryservice1-3a280-70fbd/data)",
+      "subSections": [
+        {
+          "title": "Login userName and password",
+          "description": "You don't need the email here, just the userName and the password.",
+          "image": "assets/auth_page.png"
+        },
+        {
+          "title": "Login with code",
+          "description": "You need to get the code from the server, then you can login with the code. on [Link](https://console.firebase.google.com/project/laundryservice1-3a280/database/laundryservice1-3a280-70fbd/data)",
+          "image": "assets/admin_code.png"
+        }
+      ]
+    },
+    {
+      "title": "Orders",
+      "description": "The orders are stored in the database, it has the needed informations for the orders and there status, and you can look for the orders by search **Order Number** , **Customer Name** or **Customer phoneNumber**.",
+      "image": "assets/orders.png"
+    },
+    {
+      "title": "Prices",
+      "description": "Its the prices category, which means the price for each machine, for each price it has **Name**, **Price**",
+      "image": "assets/prices.png",
+      "subSections": [
+        {
+          "title": "Edit price",
+          "description": "You can edit the price by clicking on the price, and then you can edit the price and it will be auto saved.",
+          "image": "assets/price_single.png"
+        }
+      ]
+    },
+    {
+      "title": "Stores",
+      "description": "Those are the stores (Locals) that has the tablets which runs the machiens, each one has a **Name**, **Current income**",
+      "image": "assets/stores.png",
+      "subSections": [
+        {
+          "title": "Edit store",
+          "description": "You can edit the store by clicking on the store, and then you can edit the store and it will be auto saved.",
+          "image": "assets/store_single.png"
+        }
+      ]
+    },
+    {
+      "title": "Machines",
+      "description": "Those are the machines that are in the stores, each one has a **Name**, **Status**, **Store**, **Price**, **active**, the status is the status of the machine if its running or not, the active is if the machine is active or not (showing it to the user), the price is the price of the machine, the store is the store that the machine is in.",
+      "image": "assets/machines.png",
+      "subSections": [
+        {
+          "title": "Edit machine",
+          "description": "You can edit the machine by clicking on the machine, and then you can edit the machine and it will be auto saved, and you change its price category from here",
+          "image": "assets/single_machine.png"
+        }
+      ]
+    },
+    {
+      "title": "Tablets",
+      "description": "Those are the tablets that are in the stores, each one has a **Name**, **Store**, **active**, the active is if the tablet is active or not (showing it to the user), the store is the store that the tablet is in.",
+      "image": "assets/tablets.png",
+      "subSections": [
+        {
+          "title": "Edit tablet",
+          "description": "You can edit the tablet by clicking on the tablet, and then you can edit the tablet and it will be auto saved.",
+          "image": "assets/tablet_single.png"
+        }
+      ]
+    },
+    {
+      "title": "Accounts",
+      "description": "This is for whom can access the admin console, You can create account by setting the **userName**, **password**, not email",
+      "image": "assets/accounts.png"
+    }
+  ]
+}
