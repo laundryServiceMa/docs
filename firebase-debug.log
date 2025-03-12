@@ -1,0 +1,154 @@
+[debug] [2025-03-12T19:58:55.395Z] ----------------------------------------------------------------------
+[debug] [2025-03-12T19:58:55.396Z] Command:       /usr/local/bin/firebase /Users/mac/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy --only hosting:laundryadminservice
+[debug] [2025-03-12T19:58:55.396Z] CLI Version:   13.29.3
+[debug] [2025-03-12T19:58:55.397Z] Platform:      darwin
+[debug] [2025-03-12T19:58:55.397Z] Node Version:  v18.5.0
+[debug] [2025-03-12T19:58:55.401Z] Time:          Wed Mar 12 2025 19:58:55 GMT+0000 (GMT+01:00)
+[debug] [2025-03-12T19:58:55.402Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-12T19:58:55.676Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-12T19:58:55.677Z] > authorizing via signed-in user (nimr.h.sawafta@gmail.com)
+[debug] [2025-03-12T19:58:55.678Z] [iam] checking project laundryservice1-3a280 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-03-12T19:58:55.681Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:55.682Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:55.683Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/laundryservice1-3a280:testIamPermissions [none]
+[debug] [2025-03-12T19:58:55.684Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/laundryservice1-3a280:testIamPermissions x-goog-quota-user=projects/laundryservice1-3a280
+[debug] [2025-03-12T19:58:55.684Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/laundryservice1-3a280:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-03-12T19:58:56.512Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/laundryservice1-3a280:testIamPermissions 200
+[debug] [2025-03-12T19:58:56.514Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/laundryservice1-3a280:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-03-12T19:58:56.515Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:56.515Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:56.516Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/laundryservice1-3a280 [none]
+[debug] [2025-03-12T19:58:56.882Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/laundryservice1-3a280 200
+[debug] [2025-03-12T19:58:56.883Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/laundryservice1-3a280 {"projectId":"laundryservice1-3a280","projectNumber":"52974874356","displayName":"LaundryService1","name":"projects/laundryservice1-3a280","resources":{"hostingSite":"laundryservice1-3a280","realtimeDatabaseInstance":"laundryservice1-3a280","locationId":"us-central"},"state":"ACTIVE","etag":"1_8b4dbda2-355d-4500-8907-4af104ef3b08"}
+[info] 
+[info] === Deploying to 'laundryservice1-3a280'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-03-12T19:58:56.895Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:56.896Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:56.896Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/laundryadminservice/versions [none]
+[debug] [2025-03-12T19:58:56.896Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/laundryadminservice/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-03-12T19:58:58.639Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/laundryadminservice/versions 200
+[debug] [2025-03-12T19:58:58.640Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/laundryadminservice/versions {"name":"projects/52974874356/sites/laundryadminservice/versions/2a6bf0a46d29b035","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[laundryadminservice]: beginning deploy... 
+[info] i  hosting[laundryadminservice]: found 23 files in dist 
+[debug] [2025-03-12T19:58:58.689Z] [hosting] uploading with 200 concurrency
+[debug] [2025-03-12T19:58:58.696Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:58.696Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:58.697Z] [hosting] hash cache [ZGlzdA] stored for 23 files
+[debug] [2025-03-12T19:58:58.697Z] [hosting][hash queue][FINAL] {"max":2,"min":0,"avg":0,"active":0,"complete":23,"success":23,"errored":0,"retried":0,"total":23,"elapsed":4}
+[debug] [2025-03-12T19:58:58.698Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/52974874356/sites/laundryadminservice/versions/2a6bf0a46d29b035:populateFiles [none]
+[debug] [2025-03-12T19:58:58.698Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/52974874356/sites/laundryadminservice/versions/2a6bf0a46d29b035:populateFiles {"files":{"/index.html":"2faa69dc1f338a1762ddeae8c63b2ab0410610acab697bdcfeed473a53239c64","/favicon.svg":"b5d3457391af727992322503594131143c34a6ee51cd608ce1c6fb00e4b9c0b2","/404.html":"05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3","/data/data.json":"832b547de8b79b60210fe76756ec872af259a89a9a55879cc03cde7779e08612","/components/section/index.html":"94dae0aaf78ff323ac138b3dd1ade5fea6937108bc74122a48611d9e9f65a305","/components/menu/index.html":"1c8ad9e82d790b7e769d8ef38476d343043d32bda1249a6f80a5cdf6029e729e","/components/layout/index.html":"4d8d444d9c289c3330284a0825e0e1618f29d56b6bf02cfaad85ac6e69383ed1","/components/card/index.html":"0a987ba88d7f3cd991a049110dfcd46aada688c1c0dc4b1658121bcb222bde0f","/assets/tablets.png":"9a8a34fc5158fa38f80c5bdbd811f9ce60dfd6b32cbcc2bd4b533f26b1cb0333","/assets/tablet_single.png":"cfc04397367db5f68df5e6bc13f4385792d24f5c3f701fc731a545dc691f8059","/assets/stores.png":"2e333dba3ab1ec3ab5399d1ab86e43e243b9ed5fe73eddf49e82ba40688d8597","/assets/store_single.png":"d8e8ba11669b2814e7768268ab301686c981af89b3dbc8c84d2b7d36c8aa1fec","/assets/single_machine.png":"41ef9cfe77b80686d74b40a53f885265c40ed180cd10a29da1794845a12d7e38","/assets/prices.png":"960493774da7494ca22be23d420fd189687f2158f1688d6f8370ac8796ffa375","/assets/price_single.png":"72e48607b15057a8a1e25f90862f03cea34c87b884d9f819aa597db814a0e9e0","/assets/orders.png":"252176f577c5d5db7dfc6e12ad3b12a4e3c20776f9991ed106f1eadbee3c48eb","/assets/machines.png":"ea5cd79f040d52f75cc748d8d34aa2e55aa04c6d347926d8125cc4812d455643","/assets/edit_starting_mode.png":"890c95121f3a23e703c4fc2eca76d2e9d1576407912a51f26a5b14f8585cb849","/assets/edit_account.png":"99880b3508fc1709cb5d37cc2c2402916d5e73d31cac4804475ca5873dfcfa64","/assets/auth_page.png":"0f48c61bfda6adc3f15cf296edd32087b5d316695e69882117284df3122ea810","/assets/admin_code.png":"3c31a61c1072693025955f7234c0765164abe99e6530c8d58e06963287a692c1","/assets/accounts.png":"267e056ba68f9170a305245101e2cf3bcb010afd0994434de7689f2da1956813","/assets/Dashboard.png":"80ec70a4a29a23d8fcbe06b88b8c9d8268acee08097a2e0b73756635df52803b"}}
+[debug] [2025-03-12T19:58:59.853Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/52974874356/sites/laundryadminservice/versions/2a6bf0a46d29b035:populateFiles 200
+[debug] [2025-03-12T19:58:59.853Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/52974874356/sites/laundryadminservice/versions/2a6bf0a46d29b035:populateFiles {"uploadRequiredHashes":["3c31a61c1072693025955f7234c0765164abe99e6530c8d58e06963287a692c1","1c8ad9e82d790b7e769d8ef38476d343043d32bda1249a6f80a5cdf6029e729e","ea5cd79f040d52f75cc748d8d34aa2e55aa04c6d347926d8125cc4812d455643","252176f577c5d5db7dfc6e12ad3b12a4e3c20776f9991ed106f1eadbee3c48eb","94dae0aaf78ff323ac138b3dd1ade5fea6937108bc74122a48611d9e9f65a305","0a987ba88d7f3cd991a049110dfcd46aada688c1c0dc4b1658121bcb222bde0f","41ef9cfe77b80686d74b40a53f885265c40ed180cd10a29da1794845a12d7e38","72e48607b15057a8a1e25f90862f03cea34c87b884d9f819aa597db814a0e9e0","267e056ba68f9170a305245101e2cf3bcb010afd0994434de7689f2da1956813","b5d3457391af727992322503594131143c34a6ee51cd608ce1c6fb00e4b9c0b2","d8e8ba11669b2814e7768268ab301686c981af89b3dbc8c84d2b7d36c8aa1fec","832b547de8b79b60210fe76756ec872af259a89a9a55879cc03cde7779e08612","99880b3508fc1709cb5d37cc2c2402916d5e73d31cac4804475ca5873dfcfa64","960493774da7494ca22be23d420fd189687f2158f1688d6f8370ac8796ffa375","2faa69dc1f338a1762ddeae8c63b2ab0410610acab697bdcfeed473a53239c64","890c95121f3a23e703c4fc2eca76d2e9d1576407912a51f26a5b14f8585cb849","9a8a34fc5158fa38f80c5bdbd811f9ce60dfd6b32cbcc2bd4b533f26b1cb0333","4d8d444d9c289c3330284a0825e0e1618f29d56b6bf02cfaad85ac6e69383ed1","80ec70a4a29a23d8fcbe06b88b8c9d8268acee08097a2e0b73756635df52803b","05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3","2e333dba3ab1ec3ab5399d1ab86e43e243b9ed5fe73eddf49e82ba40688d8597","0f48c61bfda6adc3f15cf296edd32087b5d316695e69882117284df3122ea810","cfc04397367db5f68df5e6bc13f4385792d24f5c3f701fc731a545dc691f8059"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files"}
+[debug] [2025-03-12T19:58:59.855Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.856Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.856Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.857Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.859Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.859Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.859Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.859Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.859Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.859Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.860Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.861Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.863Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.863Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.863Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.863Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.866Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.866Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.867Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.867Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.867Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.867Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.870Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.870Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.871Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.871Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.872Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.872Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.872Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.872Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.872Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.872Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.872Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.872Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.876Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.876Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.876Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.876Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.876Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.876Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.876Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.876Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.876Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.876Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.876Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.876Z] Checked if tokens are valid: true, expires at: 1741811979251
+[debug] [2025-03-12T19:58:59.877Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/3c31a61c1072693025955f7234c0765164abe99e6530c8d58e06963287a692c1 [none]
+[debug] [2025-03-12T19:58:59.877Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/3c31a61c1072693025955f7234c0765164abe99e6530c8d58e06963287a692c1 [stream]
+[debug] [2025-03-12T19:58:59.879Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/1c8ad9e82d790b7e769d8ef38476d343043d32bda1249a6f80a5cdf6029e729e [none]
+[debug] [2025-03-12T19:58:59.879Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/1c8ad9e82d790b7e769d8ef38476d343043d32bda1249a6f80a5cdf6029e729e [stream]
+[debug] [2025-03-12T19:58:59.880Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/ea5cd79f040d52f75cc748d8d34aa2e55aa04c6d347926d8125cc4812d455643 [none]
+[debug] [2025-03-12T19:58:59.880Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/ea5cd79f040d52f75cc748d8d34aa2e55aa04c6d347926d8125cc4812d455643 [stream]
+[debug] [2025-03-12T19:58:59.882Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/252176f577c5d5db7dfc6e12ad3b12a4e3c20776f9991ed106f1eadbee3c48eb [none]
+[debug] [2025-03-12T19:58:59.882Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/252176f577c5d5db7dfc6e12ad3b12a4e3c20776f9991ed106f1eadbee3c48eb [stream]
+[debug] [2025-03-12T19:58:59.884Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/94dae0aaf78ff323ac138b3dd1ade5fea6937108bc74122a48611d9e9f65a305 [none]
+[debug] [2025-03-12T19:58:59.884Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/94dae0aaf78ff323ac138b3dd1ade5fea6937108bc74122a48611d9e9f65a305 [stream]
+[debug] [2025-03-12T19:58:59.887Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/0a987ba88d7f3cd991a049110dfcd46aada688c1c0dc4b1658121bcb222bde0f [none]
+[debug] [2025-03-12T19:58:59.887Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/0a987ba88d7f3cd991a049110dfcd46aada688c1c0dc4b1658121bcb222bde0f [stream]
+[debug] [2025-03-12T19:58:59.891Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/41ef9cfe77b80686d74b40a53f885265c40ed180cd10a29da1794845a12d7e38 [none]
+[debug] [2025-03-12T19:58:59.891Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/41ef9cfe77b80686d74b40a53f885265c40ed180cd10a29da1794845a12d7e38 [stream]
+[debug] [2025-03-12T19:58:59.895Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/72e48607b15057a8a1e25f90862f03cea34c87b884d9f819aa597db814a0e9e0 [none]
+[debug] [2025-03-12T19:58:59.895Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/72e48607b15057a8a1e25f90862f03cea34c87b884d9f819aa597db814a0e9e0 [stream]
+[debug] [2025-03-12T19:58:59.899Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/267e056ba68f9170a305245101e2cf3bcb010afd0994434de7689f2da1956813 [none]
+[debug] [2025-03-12T19:58:59.899Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/267e056ba68f9170a305245101e2cf3bcb010afd0994434de7689f2da1956813 [stream]
+[debug] [2025-03-12T19:58:59.905Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/b5d3457391af727992322503594131143c34a6ee51cd608ce1c6fb00e4b9c0b2 [none]
+[debug] [2025-03-12T19:58:59.905Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/b5d3457391af727992322503594131143c34a6ee51cd608ce1c6fb00e4b9c0b2 [stream]
+[debug] [2025-03-12T19:58:59.910Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/d8e8ba11669b2814e7768268ab301686c981af89b3dbc8c84d2b7d36c8aa1fec [none]
+[debug] [2025-03-12T19:58:59.910Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/d8e8ba11669b2814e7768268ab301686c981af89b3dbc8c84d2b7d36c8aa1fec [stream]
+[debug] [2025-03-12T19:58:59.912Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/832b547de8b79b60210fe76756ec872af259a89a9a55879cc03cde7779e08612 [none]
+[debug] [2025-03-12T19:58:59.912Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/832b547de8b79b60210fe76756ec872af259a89a9a55879cc03cde7779e08612 [stream]
+[debug] [2025-03-12T19:58:59.917Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/99880b3508fc1709cb5d37cc2c2402916d5e73d31cac4804475ca5873dfcfa64 [none]
+[debug] [2025-03-12T19:58:59.917Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/99880b3508fc1709cb5d37cc2c2402916d5e73d31cac4804475ca5873dfcfa64 [stream]
+[debug] [2025-03-12T19:58:59.919Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/960493774da7494ca22be23d420fd189687f2158f1688d6f8370ac8796ffa375 [none]
+[debug] [2025-03-12T19:58:59.919Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/960493774da7494ca22be23d420fd189687f2158f1688d6f8370ac8796ffa375 [stream]
+[debug] [2025-03-12T19:58:59.925Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/2faa69dc1f338a1762ddeae8c63b2ab0410610acab697bdcfeed473a53239c64 [none]
+[debug] [2025-03-12T19:58:59.925Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/2faa69dc1f338a1762ddeae8c63b2ab0410610acab697bdcfeed473a53239c64 [stream]
+[debug] [2025-03-12T19:58:59.931Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/890c95121f3a23e703c4fc2eca76d2e9d1576407912a51f26a5b14f8585cb849 [none]
+[debug] [2025-03-12T19:58:59.931Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/890c95121f3a23e703c4fc2eca76d2e9d1576407912a51f26a5b14f8585cb849 [stream]
+[debug] [2025-03-12T19:58:59.936Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/9a8a34fc5158fa38f80c5bdbd811f9ce60dfd6b32cbcc2bd4b533f26b1cb0333 [none]
+[debug] [2025-03-12T19:58:59.936Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/9a8a34fc5158fa38f80c5bdbd811f9ce60dfd6b32cbcc2bd4b533f26b1cb0333 [stream]
+[debug] [2025-03-12T19:58:59.937Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/4d8d444d9c289c3330284a0825e0e1618f29d56b6bf02cfaad85ac6e69383ed1 [none]
+[debug] [2025-03-12T19:58:59.937Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/4d8d444d9c289c3330284a0825e0e1618f29d56b6bf02cfaad85ac6e69383ed1 [stream]
+[debug] [2025-03-12T19:58:59.939Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/80ec70a4a29a23d8fcbe06b88b8c9d8268acee08097a2e0b73756635df52803b [none]
+[debug] [2025-03-12T19:58:59.939Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/80ec70a4a29a23d8fcbe06b88b8c9d8268acee08097a2e0b73756635df52803b [stream]
+[debug] [2025-03-12T19:58:59.941Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3 [none]
+[debug] [2025-03-12T19:58:59.941Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3 [stream]
+[debug] [2025-03-12T19:58:59.941Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/2e333dba3ab1ec3ab5399d1ab86e43e243b9ed5fe73eddf49e82ba40688d8597 [none]
+[debug] [2025-03-12T19:58:59.941Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/2e333dba3ab1ec3ab5399d1ab86e43e243b9ed5fe73eddf49e82ba40688d8597 [stream]
+[debug] [2025-03-12T19:58:59.942Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/0f48c61bfda6adc3f15cf296edd32087b5d316695e69882117284df3122ea810 [none]
+[debug] [2025-03-12T19:58:59.942Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/0f48c61bfda6adc3f15cf296edd32087b5d316695e69882117284df3122ea810 [stream]
+[debug] [2025-03-12T19:58:59.942Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/cfc04397367db5f68df5e6bc13f4385792d24f5c3f701fc731a545dc691f8059 [none]
+[debug] [2025-03-12T19:58:59.942Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/cfc04397367db5f68df5e6bc13f4385792d24f5c3f701fc731a545dc691f8059 [stream]
+[debug] [2025-03-12T19:58:59.943Z] [hosting][populate queue][FINAL] {"max":1182,"min":1182,"avg":1182,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1248}
+[debug] [2025-03-12T19:58:59.943Z] [hosting] uploads queued: 23
+[debug] [2025-03-12T19:59:01.090Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/832b547de8b79b60210fe76756ec872af259a89a9a55879cc03cde7779e08612 200
+[debug] [2025-03-12T19:59:01.090Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/832b547de8b79b60210fe76756ec872af259a89a9a55879cc03cde7779e08612 [stream]
+[debug] [2025-03-12T19:59:01.092Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/2faa69dc1f338a1762ddeae8c63b2ab0410610acab697bdcfeed473a53239c64 200
+[debug] [2025-03-12T19:59:01.092Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/2faa69dc1f338a1762ddeae8c63b2ab0410610acab697bdcfeed473a53239c64 [stream]
+[debug] [2025-03-12T19:59:01.092Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/0a987ba88d7f3cd991a049110dfcd46aada688c1c0dc4b1658121bcb222bde0f 200
+[debug] [2025-03-12T19:59:01.092Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/0a987ba88d7f3cd991a049110dfcd46aada688c1c0dc4b1658121bcb222bde0f [stream]
+[debug] [2025-03-12T19:59:01.140Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/b5d3457391af727992322503594131143c34a6ee51cd608ce1c6fb00e4b9c0b2 200
+[debug] [2025-03-12T19:59:01.140Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/b5d3457391af727992322503594131143c34a6ee51cd608ce1c6fb00e4b9c0b2 [stream]
+[debug] [2025-03-12T19:59:01.156Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/94dae0aaf78ff323ac138b3dd1ade5fea6937108bc74122a48611d9e9f65a305 200
+[debug] [2025-03-12T19:59:01.156Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/94dae0aaf78ff323ac138b3dd1ade5fea6937108bc74122a48611d9e9f65a305 [stream]
+[debug] [2025-03-12T19:59:01.306Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/4d8d444d9c289c3330284a0825e0e1618f29d56b6bf02cfaad85ac6e69383ed1 200
+[debug] [2025-03-12T19:59:01.306Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/4d8d444d9c289c3330284a0825e0e1618f29d56b6bf02cfaad85ac6e69383ed1 [stream]
+[debug] [2025-03-12T19:59:01.592Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3 200
+[debug] [2025-03-12T19:59:01.593Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3 [stream]
+[debug] [2025-03-12T19:59:01.780Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/1c8ad9e82d790b7e769d8ef38476d343043d32bda1249a6f80a5cdf6029e729e 200
+[debug] [2025-03-12T19:59:01.780Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/laundryadminservice/versions/2a6bf0a46d29b035/files/1c8ad9e82d790b7e769d8ef38476d343043d32bda1249a6f80a5cdf6029e729e [stream]

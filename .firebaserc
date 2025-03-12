@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "laundryservice1-3a280"
-  }
+  },
+  "targets": {
+    "laundryservice1-3a280": {
+      "hosting": {
+        "laundryadminservice": [
+          "laundryadminservice"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
