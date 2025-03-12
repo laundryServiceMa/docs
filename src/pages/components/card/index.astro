@@ -2,63 +2,92 @@
 interface Props {
   title: string;
   description: string;
-  image: string;
+  image?: string;
+  imageAlt?: string; // Optional alt text for the image
 }
 
-const { title, description, image } = Astro.props;
+const { title, description, image, imageAlt = title } = Astro.props;
 ---
 
-<dev class="link-card">
-  <img
-    src={image}
-    alt={title}
-    class={`w-full h-44 object-contain rounded-t-lg`}
-  />
-  <h2>
-    {title}
-    <span>&rarr;</span>
-  </h2>
-  <p>
-    <Fragment set:html={description} />
-  </p>
-</dev>
 <style>
-  .link-card {
-    list-style: none;
+  .card {
+    margin: 1rem;
+    border-radius: 0.75rem;
+    overflow: hidden; /* Ensure image doesn't overflow rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition:
+      transform 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+    background-color: var(--card-background-color);
+    color: var(--text-color);
     display: flex;
-    padding: 1px;
-    background-color: #23262d;
-    background-image: none;
-    background-size: 400%;
-    border-radius: 7px;
-    background-position: 100%;
-    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    max-height: fit-content;
+    /* height: 100%; Ensure the card fills its container vertically */
   }
-  .link-card > a {
+
+  .card:hover,
+  .card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-image-container {
+    position: relative;
+    width: 100%; /* Make the image fill the card width */
+    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+    overflow: hidden;
+  }
+
+  .card-image {
     width: 100%;
-    text-decoration: none;
+    height: 100%;
+    object-fit: cover; /* Cover the container, cropping if necessary */
+    display: block; /* Remove extra space below image */
+  }
+
+  .card-content {
+    padding: 1.5rem;
+    flex: 1; /* Allow content to grow and fill available space */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-description {
+    font-size: 1rem;
     line-height: 1.4;
-    padding: calc(1.5rem - 1px);
-    border-radius: 8px;
-    color: white;
-    background-color: #23262d;
-    opacity: 0.8;
   }
-  h2 {
-    margin: 0;
-    font-size: 1.25rem;
-    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  .card-description :global(p) {
+    margin-bottom: 1rem;
   }
-  p {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --card-background-color: #333;
+    }
   }
-  .link-card:is(:hover, :focus-within) {
-    background-position: 0;
-    background-image: var(--accent-gradient);
-  }
-  .link-card:is(:hover, :focus-within) h2 {
-    color: rgb(var(--accent-light));
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --card-background-color: #fff;
+    }
   }
 </style>
+
+<div class="card">
+  <div class="card-image-container">
+    {image && <img src={image} alt={imageAlt} class="card-image" />}
+  </div>
+  <div class="card-content">
+    <h3 class="card-title">{title}</h3>
+    <div class="card-description">
+      {description}
+    </div>
+  </div>
+</div>

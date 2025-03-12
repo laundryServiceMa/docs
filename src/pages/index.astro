@@ -1,5 +1,6 @@
 ---
 import data from "../data/data.json";
+import Card from "./components/card/index.astro";
 import Layout from "./components/layout/index.astro";
 import NavigationMenu from "./components/menu/index.astro";
 import Section from "./components/section/index.astro";
@@ -7,7 +8,7 @@ import Section from "./components/section/index.astro";
 const menuItems = [
   ...data.sections.map((section, index) => ({
     title: section.title,
-    index: `${index + 1}`,
+    index: section.title,
     href: `#${section.title}`,
   })),
 ];
@@ -23,23 +24,18 @@ const sectionsData = data.sections.map((section) => ({
 <Layout title="My Awesome Page">
   <NavigationMenu menuItems={menuItems} />
 
-  <Section id="home">
-    <h2>Home Section</h2>
-    <p>Content of the home section.</p>
-  </Section>
-
-  <Section id="about">
-    <h2>About Section</h2>
-    <p>Content of the about section.</p>
-  </Section>
-
-  <Section id="services">
-    <h2>Services Section</h2>
-    <p>Content of the services section.</p>
-  </Section>
-
-  <Section id="contact">
-    <h2>Contact Section</h2>
-    <p>Content of the contact section.</p>
-  </Section>
+  {
+    sectionsData.map((e) => (
+      <Section id={e.title} title={e.title}>
+        <Card title={e.title} description={e.description} image={e.image} />
+        {e.subSections?.map((subSection) => (
+          <Card
+            title={subSection.title}
+            description={subSection.description}
+            image={subSection.image}
+          />
+        ))}
+      </Section>
+    ))
+  }
 </Layout>
