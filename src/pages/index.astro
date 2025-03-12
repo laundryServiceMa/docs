@@ -22,10 +22,7 @@ const sectionsData = data.sections.map((section) => ({
 ---
 
 <Layout title="My Awesome Page">
-  <NavigationMenu
-    menuItems={menuItems}
-    platformLink="https://laundryservice1-3a280.web.app/"
-  />
+  <NavigationMenu menuItems={menuItems} platformLink={data.websiteLine} />
 
   {
     sectionsData.map((e) => (
