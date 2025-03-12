@@ -17,6 +17,11 @@
           "image": "assets/admin_code.png"
         }
       ]
+    },
+    {
+      "title": "Orders",
+      "description": "The orders are stored in the database, it has the needed informations for the orders and there status, and you can look for the orders by search **Order Number** , **Customer Name** or **Customer phoneNumber**.",
+      "image": "assets/orders.png"
     }
   ]
 }
