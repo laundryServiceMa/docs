@@ -1,19 +1,26 @@
 ---
+// Import necessary packages for parsing markdown
+import { remark } from "remark";
+import html from "remark-html";
+
 interface Props {
   title: string;
   description: string;
-  image?: string;
+  image?: string; // Make image optional
   imageAlt?: string; // Optional alt text for the image
 }
 
+// Convert description to HTML from markdown
 const { title, description, image, imageAlt = title } = Astro.props;
+const processedDescription = await remark().use(html).process(description);
+const descriptionHTML = processedDescription.toString();
 ---
 
 <style>
   .card {
     margin: 1rem;
     border-radius: 0.75rem;
-    overflow: hidden; /* Ensure image doesn't overflow rounded corners */
+    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition:
       transform 0.2s ease-in-out,
@@ -22,8 +29,8 @@ const { title, description, image, imageAlt = title } = Astro.props;
     color: var(--text-color);
     display: flex;
     flex-direction: column;
-    max-height: fit-content;
-    /* height: 100%; Ensure the card fills its container vertically */
+    width: auto;
+    backdrop-filter: blur(5px);
   }
 
   .card:hover,
@@ -34,21 +41,21 @@ const { title, description, image, imageAlt = title } = Astro.props;
 
   .card-image-container {
     position: relative;
-    width: 100%; /* Make the image fill the card width */
-    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+    width: 100%;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
   }
 
   .card-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the container, cropping if necessary */
-    display: block; /* Remove extra space below image */
+    object-fit: cover;
+    display: block;
   }
 
   .card-content {
     padding: 1.5rem;
-    flex: 1; /* Allow content to grow and fill available space */
+    flex: 1;
     display: flex;
     flex-direction: column;
   }
@@ -63,31 +70,47 @@ const { title, description, image, imageAlt = title } = Astro.props;
     font-size: 1rem;
     line-height: 1.4;
   }
+
   .card-description :global(p) {
     margin-bottom: 1rem;
   }
 
+  /* Make links more visible */
+  .card-description :global(a) {
+    color: var(--primary-color); /* Use your theme's primary color */
+    font-weight: 500; /* Make the text a little bolder */
+    text-decoration: none; /* Remove default underline */
+    border-bottom: 2px solid var(--primary-color); /* Add a subtle underline */
+    transition: border-bottom-color 0.2s ease-in-out; /* Smooth transition */
+  }
+
+  .card-description :global(a:hover) {
+    border-bottom-color: transparent; /* Remove underline on hover */
+  }
+
   @media (prefers-color-scheme: dark) {
     :root {
-      --card-background-color: #333;
+      --card-background-color: rgba(51, 51, 51, 0.8);
     }
   }
 
   @media (prefers-color-scheme: light) {
     :root {
-      --card-background-color: #fff;
+      --card-background-color: rgba(255, 255, 255, 0.8);
     }
   }
 </style>
 
 <div class="card">
-  <div class="card-image-container">
-    {image && <img src={image} alt={imageAlt} class="card-image" />}
-  </div>
+  {
+    image && (
+      <div class="card-image-container">
+        <img src={image} alt={imageAlt} class="card-image" />
+      </div>
+    )
+  }
   <div class="card-content">
     <h3 class="card-title">{title}</h3>
-    <div class="card-description">
-      {description}
-    </div>
+    <div class="card-description" set:html={descriptionHTML} />
   </div>
 </div>

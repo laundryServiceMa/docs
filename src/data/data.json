@@ -54,7 +54,7 @@
         {
           "title": "Edit machine",
           "description": "You can edit the machine by clicking on the machine, and then you can edit the machine and it will be auto saved, and you change its price category from here",
-          "image": "assets/machine_single.png"
+          "image": "assets/single_machine.png"
         }
       ]
     },
@@ -72,7 +72,7 @@
     },
     {
       "title": "Accounts",
-      "description": "This is for whom can access the admin console",
+      "description": "This is for whom can access the admin console, You can create account by setting the **userName**, **password**, not email",
       "image": "assets/accounts.png"
     }
   ]
