@@ -5,20 +5,24 @@ import Layout from "./components/layout/index.astro";
 import NavigationMenu from "./components/menu/index.astro";
 import Section from "./components/section/index.astro";
 
-const menuItems = [
-  ...data.sections.map((section, index) => ({
-    title: section.title,
-    index: section.title,
-    href: `#${section.title}`,
-  })),
-];
+//Safely access data.sections and use an empty array as a fallback
+const menuItems = data.sections
+  ? data.sections.map((section, index) => ({
+      title: section.title,
+      index: section.title,
+      href: `#${section.title}`,
+    }))
+  : [];
 
-const sectionsData = data.sections.map((section) => ({
-  title: section.title,
-  description: section.description,
-  image: section.image,
-  subSections: section.subSections,
-}));
+//Safely access data.sections and use an empty array as a fallback
+const sectionsData = data.sections
+  ? data.sections.map((section) => ({
+      title: section.title,
+      description: section.description,
+      image: section.image,
+      subSections: section.subSections,
+    }))
+  : [];
 ---
 
 <Layout title="Laundry Admin App Documents">

@@ -6,7 +6,7 @@ interface Props {
   maxWidth?: string; // Optional max-width to prevent full-screen width
 }
 
-const { id, title, padding = "3rem", maxWidth = "800px" } = Astro.props;
+const { id, title, padding = "3rem", maxWidth = "1200px" } = Astro.props;
 ---
 
 <style>
@@ -26,7 +26,7 @@ const { id, title, padding = "3rem", maxWidth = "800px" } = Astro.props;
 
   :root {
     --section-padding: 3rem;
-    --section-max-width: 800px;
+    --section-max-width: 1000px;
   }
 </style>
 
