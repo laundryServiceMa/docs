@@ -143,7 +143,7 @@ const bgColor = backgroundColor || "var(--background-color)";
 
 <nav class="navigation-menu">
   {
-    menuItems.map((item) => (
+    (menuItems ?? []).map((item) => (
       <a href={`#${item.index}`} class="menu-item">
         <div class="menu-item-card" data-section={item.index}>
           {item.title}
