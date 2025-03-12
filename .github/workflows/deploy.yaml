@@ -49,5 +49,5 @@ jobs:
       # Log the deployed site URL automatically
       - name: Log deployed site URL
         run: |
-          DEPLOYED_URL="https://${{ github.actor }}.github.io/${{ github.repository.split('/')[1] }}/"
-          echo "Your site is deployed to: $DEPLOYED_URL"
+          DEPLOYED_URL="https://${{ github.actor }}.github.io/${{ github.repository }}".split('/')[1]
+          echo "Your site is deployed to: https://${{ github.actor }}.github.io/${{ github.repository.split('/')[1] }}"
