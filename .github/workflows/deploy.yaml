@@ -1,38 +1,43 @@
-name: Deploy Astro to GitHub Pages with Bun
+name: Deploy Astro Website
 
 on:
-  # Trigger the workflow on push to the `main` branch or manual execution
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches:
+      - main  # Trigger deployment on pushes to the `main` branch
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v3
-      - name: Install, build, and upload your site
-        uses: withastro/action@v1
-        # with:
-        # path: . # The root location of your Astro project inside the repository. (optional)
-        # node-version: 18 # The specific version of Node that should be used to build your site. Defaults to 18. (optional)
-        # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-      - name: Download artifact
-        uses: actions/download-artifact@v3
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js (ensure the version matches the one in your project)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.11.1'  # Or use the version that your Astro project requires
+
+      # Install Yarn (if not already installed)
+      - name: Install Yarn
+        run: npm install --global yarn
+
+      # Install dependencies using Yarn
+      - name: Install dependencies
+        run: yarn install
+
+      # Build the Astro project using Yarn
+      - name: Build the Astro project
+        run: yarn build
+
+      # Deploy to your hosting platform (example for Netlify, Vercel, or GitHub Pages)
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+        uses: JamesIves/github-pages-deploy-action@v4.1.1
+        with:
+          branch: gh-pages  # The branch that will be used to deploy
+          folder: dist  # The folder that contains the built Astro site
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
