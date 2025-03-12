@@ -4,7 +4,7 @@
     {
       "title": "Authentication",
       "description": "To login, the user can use the following credentials: **userName** and **password**, or obtain the **code** from the **server** and then login. You can get the access code at: [Link](https://console.firebase.google.com/project/laundryservice1-3a280/database/laundryservice1-3a280-70fbd/data)",
-      "supSections": [
+      "subSections": [
         {
           "title": "Login userName and password",
           "description": "You don't need the email here, just the userName and the password.",
@@ -58,6 +58,23 @@
           "image": "assets/machine_single.png"
         }
       ]
+    },
+    {
+      "title": "Tablets",
+      "description": "Those are the tablets that are in the stores, each one has a **Name**, **Store**, **active**, the active is if the tablet is active or not (showing it to the user), the store is the store that the tablet is in.",
+      "image": "assets/tablets.png",
+      "subSections": [
+        {
+          "title": "Edit tablet",
+          "description": "You can edit the tablet by clicking on the tablet, and then you can edit the tablet and it will be auto saved.",
+          "image": "assets/tablet_single.png"
+        }
+      ]
+    },
+    {
+      "title": "Accounts",
+      "description": "This is for whom can access the admin console",
+      "image": "assets/accounts.png"
     }
   ]
 }
