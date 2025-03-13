@@ -37,17 +37,32 @@ jobs:
       - name: Build the Astro project
         run: bun run build
 
-      # Deploy to GitHub Pages (using the latest stable version of the deploy action)
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4  # Updated version
-        with:
-          branch: gh-pages  # The branch that will be used to deploy
-          folder: dist  # The folder that contains the built Astro site
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
-      # Log the deployed site URL automatically
-      - name: Log deployed site URL
+      - name: Set up Firebase Authentication using Service Account
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
+
+      - name: Install Firebase CLI
         run: |
-          DEPLOYED_URL="https://${{ github.actor }}.github.io/${{ github.event.repository.name }}"
-          echo "Your site is deployed to: https://${{ github.actor }}.github.io/${{ github.event.repository.name }}"
+          bun add -g firebase-tools
+
+      - name: Deploy to Firebase Hosting
+        run: |
+          firebase deploy --only hosting
+        env:
+          CI: false
+      # # Deploy to GitHub Pages (using the latest stable version of the deploy action)
+      # - name: Deploy to GitHub Pages
+      #   uses: JamesIves/github-pages-deploy-action@v4  # Updated version
+      #   with:
+      #     branch: gh-pages  # The branch that will be used to deploy
+      #     folder: dist  # The folder that contains the built Astro site
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+      # # Log the deployed site URL automatically
+      # - name: Log deployed site URL
+      #   run: |
+      #     DEPLOYED_URL="https://${{ github.actor }}.github.io/${{ github.event.repository.name }}"
+      #     echo "Your site is deployed to: https://${{ github.actor }}.github.io/${{ github.event.repository.name }}"
