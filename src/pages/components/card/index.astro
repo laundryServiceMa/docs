@@ -14,6 +14,9 @@ interface Props {
 const { title, description, image, imageAlt = title } = Astro.props;
 const processedDescription = await remark().use(html).process(description);
 const descriptionHTML = processedDescription.toString();
+
+// Fix image path to include base URL
+const imageSrc = image ? `/docs/${image}` : undefined;
 ---
 
 <style>
@@ -103,9 +106,9 @@ const descriptionHTML = processedDescription.toString();
 
 <div class="card">
   {
-    image && (
+    imageSrc && (
       <div class="card-image-container">
-        <img src={image} alt={imageAlt} class="card-image" />
+        <img src={imageSrc} alt={imageAlt} class="card-image" />
       </div>
     )
   }

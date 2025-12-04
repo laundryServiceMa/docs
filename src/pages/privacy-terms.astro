@@ -1,0 +1,300 @@
+---
+// Privacy Policy and Terms of Service page for Laundry Service app
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy & Terms of Service - Laundry Service</title>
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --primary-dark: #1d4ed8;
+        --text-color: #1f2937;
+        --text-light: #6b7280;
+        --background-color: #ffffff;
+        --border-color: #e5e7eb;
+        --section-bg: #f9fafb;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--background-color);
+      }
+
+      /* Header Styles */
+      .header {
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        color: white;
+        padding: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+      }
+
+      .home-link {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .home-link:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Main Content */
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .page-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      .section {
+        background: var(--section-bg);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid var(--border-color);
+      }
+
+      .section h2 {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--primary-color);
+      }
+
+      .section h3 {
+        color: var(--text-color);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.75rem 0;
+        font-weight: 600;
+      }
+
+      .section p {
+        margin-bottom: 1rem;
+        color: var(--text-light);
+      }
+
+      .section ul {
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+      }
+
+      .section li {
+        margin-bottom: 0.5rem;
+        color: var(--text-light);
+      }
+
+      .contact-info {
+        background: var(--primary-color);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      .last-updated {
+        text-align: center;
+        color: var(--text-light);
+        font-size: 0.9rem;
+        margin-top: 2rem;
+        font-style: italic;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header-container {
+          padding: 0 1rem;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .container {
+          padding: 1rem;
+        }
+
+        .page-title {
+          font-size: 2rem;
+        }
+
+        .section {
+          padding: 1.5rem;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text-color: #f3f4f6;
+          --text-light: #9ca3af;
+          --background-color: #111827;
+          --border-color: #374151;
+          --section-bg: #1f2937;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-container">
+        <a href="#" class="logo">Laundry Service</a>
+        <a href="https://laundryservice.ma/" class="home-link">← Go Home</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+      <h1 class="page-title">Privacy Policy & Terms of Service</h1>
+
+      <!-- Privacy Policy Section -->
+      <section class="section">
+        <h2>Privacy Policy</h2>
+        
+        <h3>1. Information We Collect</h3>
+        <p>Laundry Service collects the following information to provide you with our services:</p>
+        <ul>
+          <li><strong>Phone Number:</strong> We collect your phone number for order tracking and communication purposes only.</li>
+          <li><strong>Order Information:</strong> Details about your laundry orders, including pickup/delivery addresses, service preferences, and payment information.</li>
+          <li><strong>Authentication Data:</strong> Secure authentication credentials to protect your account and ensure service security.</li>
+          <li><strong>Usage Information:</strong> App usage data to improve our services and user experience.</li>
+        </ul>
+
+        <h3>2. How We Use Your Information</h3>
+        <p>We use your information solely for the following purposes:</p>
+        <ul>
+          <li>Processing and tracking your laundry orders</li>
+          <li>Communicating with you about order status, pickup, and delivery</li>
+          <li>Providing customer support and resolving issues</li>
+          <li>Improving our app functionality and user experience</li>
+          <li>Processing payments securely</li>
+        </ul>
+
+        <h3>3. Information Sharing</h3>
+        <p><strong>We do not share, sell, or distribute your personal information to third parties.</strong> Your data is used exclusively for:</p>
+        <ul>
+          <li>Order tracking and management</li>
+          <li>Direct communication regarding your orders via phone number</li>
+          <li>Internal service improvement purposes</li>
+        </ul>
+
+        <h3>4. Data Security</h3>
+        <p>We implement industry-standard security measures to protect your personal information, including:</p>
+        <ul>
+          <li>Encrypted data transmission and storage</li>
+          <li>Secure authentication systems</li>
+          <li>Regular security audits and updates</li>
+          <li>Limited access to personal information on a need-to-know basis</li>
+        </ul>
+
+        <h3>5. Data Retention</h3>
+        <p>We retain your information only as long as necessary to provide our services and comply with legal obligations. Order history is maintained to help with future service and support needs.</p>
+
+        <h3>6. Your Rights</h3>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Access your personal information stored in our app</li>
+          <li>Request correction of inaccurate information</li>
+          <li>Request deletion of your account and associated data</li>
+          <li>Withdraw consent for data processing (which may affect service availability)</li>
+        </ul>
+      </section>
+
+      <!-- Terms and Conditions Section -->
+      <section class="section">
+        <h2>Terms and Conditions</h2>
+        
+        <h3>1. Service Description</h3>
+        <p>Laundry Service is a mobile application that connects customers with professional laundry and dry cleaning services. We facilitate order placement, payment processing, and service coordination.</p>
+
+        <h3>2. User Responsibilities</h3>
+        <p>By using our app, you agree to:</p>
+        <ul>
+          <li>Provide accurate and current information for your account</li>
+          <li>Ensure items submitted for cleaning are safe and legal</li>
+          <li>Be available for pickup and delivery at scheduled times</li>
+          <li>Inspect items upon return and report any issues within 24 hours</li>
+          <li>Pay for services in a timely manner through the app</li>
+        </ul>
+
+        <h3>3. Service Limitations</h3>
+        <p>Please note the following service limitations:</p>
+        <ul>
+          <li>We reserve the right to refuse service for items that may damage equipment or other garments</li>
+          <li>Delivery times are estimates and may vary due to weather, traffic, or high demand</li>
+          <li>Special care items may require additional processing time</li>
+          <li>We are not responsible for items left in pockets</li>
+        </ul>
+
+        <h3>4. Payment Terms</h3>
+        <ul>
+          <li>All payments are processed securely through the app</li>
+          <li>Prices are displayed before order confirmation</li>
+          <li>Additional charges may apply for special services or rush orders</li>
+          <li>Refunds are processed according to our satisfaction guarantee policy</li>
+        </ul>
+
+        <h3>5. Liability and Disclaimers</h3>
+        <p>While we take great care with your items:</p>
+        <ul>
+          <li>We are not liable for pre-existing damage or wear</li>
+          <li>Maximum liability is limited to the cost of the affected item(s)</li>
+          <li>We recommend checking care labels before submitting items</li>
+          <li>High-value items should be disclosed at the time of service</li>
+        </ul>
+
+        <h3>6. Account Termination</h3>
+        <p>We reserve the right to suspend or terminate accounts that violate these terms or engage in fraudulent activity. Users may cancel their account at any time through the app settings.</p>
+
+        <h3>7. Changes to Terms</h3>
+        <p>We may update these terms periodically. Significant changes will be communicated through the app, and continued use constitutes acceptance of updated terms.</p>
+      </section>
+
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p>If you have any questions about this Privacy Policy or Terms of Service, please contact us through the Laundry Service app or visit our website at <a href="https://laundryservice.ma/" style="color: #bfdbfe;">laundryservice.ma</a></p>
+      </div>
+
+      <p class="last-updated">Last Updated: December 4, 2025</p>
+    </main>
+  </body>
+</html>
