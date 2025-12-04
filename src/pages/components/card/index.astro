@@ -15,8 +15,8 @@ const { title, description, image, imageAlt = title } = Astro.props;
 const processedDescription = await remark().use(html).process(description);
 const descriptionHTML = processedDescription.toString();
 
-// Fix image path to include base URL
-const imageSrc = image ? `/docs/${image}` : undefined;
+// Use image path directly since we removed the base path
+const imageSrc = image;
 ---
 
 <style>
