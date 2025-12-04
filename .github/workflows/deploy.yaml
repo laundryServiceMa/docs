@@ -31,11 +31,11 @@ jobs:
 
       # Install dependencies using Bun
       - name: Install dependencies
-        run: $HOME/.bun/bin/bun install
+        run: bun install
 
       # Build the Astro project using Bun
       - name: Build the Astro project
-        run: $HOME/.bun/bin/bun run build
+        run: bun run build
 
 
       - name: Set up Firebase Authentication using Service Account
