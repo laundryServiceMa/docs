@@ -28,6 +28,8 @@ jobs:
           rm -rf node_modules
           rm -f package-lock.json
           rm -f bun.lockb
+          rm -f yarn.lock
+          
 
       # Install dependencies using Bun
       - name: Install dependencies
