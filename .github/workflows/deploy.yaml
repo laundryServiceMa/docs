@@ -18,9 +18,13 @@ jobs:
       - name: Install Bun
         run: curl -fsSL https://bun.sh/install | bash
 
-      # Add Bun to PATH
+      # Add Bun to PATH and verify installation
       - name: Add Bun to PATH
-        run: echo "$HOME/.bun/bin" >> $GITHUB_PATH
+        run: |
+          echo "$HOME/.bun/bin" >> $GITHUB_PATH
+          export PATH="$HOME/.bun/bin:$PATH"
+          echo "Bun version:"
+          bun --version
 
       # Remove old node_modules and lock files
       - name: Clean up old dependencies
@@ -31,11 +35,15 @@ jobs:
 
       # Install dependencies using Bun
       - name: Install dependencies
-        run: bun install
+        run: |
+          export PATH="$HOME/.bun/bin:$PATH"
+          bun install
 
       # Build the Astro project using Bun
       - name: Build the Astro project
-        run: bun run build
+        run: |
+          export PATH="$HOME/.bun/bin:$PATH"
+          bun run build
 
 
       - name: Set up Firebase Authentication using Service Account
@@ -45,6 +53,7 @@ jobs:
 
       - name: Install Firebase CLI
         run: |
+          export PATH="$HOME/.bun/bin:$PATH"
           bun add -g firebase-tools
 
       - name: Deploy to Firebase Hosting
